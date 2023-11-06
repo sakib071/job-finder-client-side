@@ -19,7 +19,7 @@ const CategoryCard = ({ job }) => {
                         <div className="text-sm flex items-center"> <MdOutlineAttachMoney /> <span>{minimumPrice} - {maximumPrice}</span> </div>
                     </div>
                     <div className="card-actions justify-end mt-5">
-                        <button className="btn btn-sm btn-outline bg-white  text-blue-500 hover:bg-blue-500 hover:border-0 hover:text-white">Apply Now</button>
+                        <button className="btn btn-sm btn-outline bg-white  text-blue-500 hover:bg-blue-500 hover:border-0 hover:text-white">Bid Now</button>
                     </div>
                 </div>
             </div>

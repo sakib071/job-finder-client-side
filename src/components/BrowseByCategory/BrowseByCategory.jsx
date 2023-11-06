@@ -1,21 +1,17 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import CategoryCard from './CategoryCard';
-import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const BrowseByCategory = () => {
-    const { category } = useParams();
     const [jobs, setJobs] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState('Web Development');
+    const [selectedCategory, setSelectedCategory] = useState('webDevelopment');
 
     useEffect(() => {
         fetch(`http://localhost:5000/jobs?category=webDevelopment`)
             .then((response) => response.json())
             .then((data) => setJobs(data.filter(job => job.category == selectedCategory)));
     }, [selectedCategory]);
-
-    console.log(category);
 
     const handleCategory = (selectedCategory) => {
         console.log("Clicked: " + selectedCategory);
@@ -47,7 +43,6 @@ const BrowseByCategory = () => {
                             </div>
                         </TabPanel>
                         <TabPanel>
-                            {/* Content for Digital Marketing tab */}
                             <div className='container grid grid-cols-4 p-5 justify-center items-center gap-5 mx-auto mt-10'>
                                 {jobs.map((job) => (
                                     <CategoryCard key={job.id} job={job} />
@@ -55,7 +50,6 @@ const BrowseByCategory = () => {
                             </div>
                         </TabPanel>
                         <TabPanel>
-                            {/* Content for Graphics Design tab */}
                             <div className='container grid grid-cols-4 p-5 justify-center items-center gap-5 mx-auto mt-10'>
                                 {jobs.map((job) => (
                                     <CategoryCard key={job.id} job={job} />
