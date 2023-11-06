@@ -1,0 +1,272 @@
+[
+    {
+        "id": 1,
+        "Job Title": "Web Developer",
+        "Deadline": "2023-11-10",
+        "Description": "Create a responsive website for a client.",
+        "Category": "Web Development",
+        "Minimum Price": 100,
+        "Maximum Price": 500
+    },
+    {
+        "id": 2,
+        "Job Title": "Social Media Manager",
+        "Deadline": "2023-11-15",
+        "Description": "Manage social media accounts for a small business.",
+        "Category": "Digital Marketing",
+        "Minimum Price": 200,
+        "Maximum Price": 800
+    },
+    {
+        "id": 3,
+        "Job Title": "Logo Designer",
+        "Deadline": "2023-11-12",
+        "Description": "Design a unique logo for a startup company.",
+        "Category": "Graphics Design",
+        "Minimum Price": 50,
+        "Maximum Price": 300
+    },
+    {
+        "id": 4,
+        "Job Title": "Front-end Developer",
+        "Deadline": "2023-11-20",
+        "Description": "Build the front-end of a new web application.",
+        "Category": "Web Development",
+        "Minimum Price": 150,
+        "Maximum Price": 600
+    },
+    {
+        "id": 5,
+        "Job Title": "Content Writer",
+        "Deadline": "2023-11-14",
+        "Description": "Write blog posts for a technology website.",
+        "Category": "Digital Marketing",
+        "Minimum Price": 75,
+        "Maximum Price": 250
+    },
+    {
+        "id": 6,
+        "Job Title": "UI/UX Designer",
+        "Deadline": "2023-11-18",
+        "Description": "Design the user interface for a mobile app.",
+        "Category": "Graphics Design",
+        "Minimum Price": 100,
+        "Maximum Price": 400
+    },
+    {
+        "id": 7,
+        "Job Title": "Back-end Developer",
+        "Deadline": "2023-11-22",
+        "Description": "Develop the server-side logic for a web application.",
+        "Category": "Web Development",
+        "Minimum Price": 200,
+        "Maximum Price": 700
+    },
+    {
+        "id": 8,
+        "Job Title": "SEO Specialist",
+        "Deadline": "2023-11-16",
+        "Description": "Optimize a website for search engines.",
+        "Category": "Digital Marketing",
+        "Minimum Price": 125,
+        "Maximum Price": 350
+    },
+    {
+        "id": 9,
+        "Job Title": "Graphic Illustrator",
+        "Deadline": "2023-11-12",
+        "Description": "Create custom illustrations for a children's book.",
+        "Category": "Graphics Design",
+        "Minimum Price": 75,
+        "Maximum Price": 300
+    },
+    {
+        "id": 10,
+        "Job Title": "Full Stack Developer",
+        "Deadline": "2023-11-25",
+        "Description": "Develop both the front-end and back-end of a web application.",
+        "Category": "Web Development",
+        "Minimum Price": 250,
+        "Maximum Price": 800
+    },
+    {
+        "id": 11,
+        "Job Title": "Email Marketer",
+        "Deadline": "2023-11-14",
+        "Description": "Create and manage email marketing campaigns for an e-commerce store.",
+        "Category": "Digital Marketing",
+        "Minimum Price": 100,
+        "Maximum Price": 400
+    },
+    {
+        "id": 12,
+        "Job Title": "Package Designer",
+        "Deadline": "2023-11-18",
+        "Description": "Design packaging for a new line of food products.",
+        "Category": "Graphics Design",
+        "Minimum Price": 50,
+        "Maximum Price": 250
+    },
+    {
+        "id": 13,
+        "Job Title": "WordPress Developer",
+        "Deadline": "2023-11-22",
+        "Description": "Build a WordPress website for a client.",
+        "Category": "Web Development",
+        "Minimum Price": 150,
+        "Maximum Price": 600
+    },
+    {
+        "id": 14,
+        "Job Title": "Social Media Advertiser",
+        "Deadline": "2023-11-16",
+        "Description": "Create and manage social media ads for a fashion brand.",
+        "Category": "Digital Marketing",
+        "Minimum Price": 75,
+        "Maximum Price": 300
+    },
+    {
+        "id": 15,
+        "Job Title": "Poster Designer",
+        "Deadline": "2023-11-14",
+        "Description": "Design posters for an upcoming music festival.",
+        "Category": "Graphics Design",
+        "Minimum Price": 100,
+        "Maximum Price": 500
+    },
+    {
+        "id": 16,
+        "Job Title": "E-commerce Website Developer",
+        "Deadline": "2023-11-20",
+        "Description": "Build an online store for a small business.",
+        "Category": "Web Development",
+        "Minimum Price": 200,
+        "Maximum Price": 700
+    },
+    {
+        "id": 17,
+        "Job Title": "Content Marketing Specialist",
+        "Deadline": "2023-11-15",
+        "Description": "Plan and execute content marketing strategies for a tech startup.",
+        "Category": "Digital Marketing",
+        "Minimum Price": 125,
+        "Maximum Price": 400
+    },
+    {
+        "id": 18,
+        "Job Title": "Brochure Designer",
+        "Deadline": "2023-11-12",
+        "Description": "Design brochures for a travel agency.",
+        "Category": "Graphics Design",
+        "Minimum Price": 80,
+        "Maximum Price": 350
+    },
+    {
+        "id": 19,
+        "Job Title": "Mobile App Developer",
+        "Deadline": "2023-11-24",
+        "Description": "Develop a mobile app for a startup company.",
+        "Category": "Web Development",
+        "Minimum Price": 200,
+        "Maximum Price": 700
+    },
+    {
+        "id": 20,
+        "Job Title": "Social Media Content Creator",
+        "Deadline": "2023-11-17",
+        "Description": "Create engaging social media content for a beauty brand.",
+        "Category": "Digital Marketing",
+        "Minimum Price": 100,
+        "Maximum Price": 400
+    },
+    {
+        "id": 21,
+        "Job Title": "Illustration Artist",
+        "Deadline": "2023-11-13",
+        "Description": "Create colorful illustrations for a children's book series.",
+        "Category": "Graphics Design",
+        "Minimum Price": 70,
+        "Maximum Price": 300
+    },
+    {
+        "id": 22,
+        "Job Title": "Database Administrator",
+        "Deadline": "2023-11-23",
+        "Description": "Manage and optimize a database for a software company.",
+        "Category": "Web Development",
+        "Minimum Price": 150,
+        "Maximum Price": 600
+    },
+    {
+        "id": 23,
+        "Job Title": "Search Engine Marketing Specialist",
+        "Deadline": "2023-11-14",
+        "Description": "Create and manage paid search campaigns for an e-commerce store.",
+        "Category": "Digital Marketing",
+        "Minimum Price": 120,
+        "Maximum Price": 450
+    },
+    {
+        "id": 24,
+        "Job Title": "Flyer Designer",
+        "Deadline": "2023-11-19",
+        "Description": "Design eye-catching flyers for a local event.",
+        "Category": "Graphics Design",
+        "Minimum Price": 60,
+        "Maximum Price": 250
+    },
+    {
+        "id": 25,
+        "Job Title": "Game Developer",
+        "Deadline": "2023-11-21",
+        "Description": "Create an addictive mobile game for a gaming startup.",
+        "Category": "Web Development",
+        "Minimum Price": 250,
+        "Maximum Price": 800
+    },
+    {
+        "id": 26,
+        "Job Title": "Email Copywriter",
+        "Deadline": "2023-11-15",
+        "Description": "Write compelling email copy for a subscription service.",
+        "Category": "Digital Marketing",
+        "Minimum Price": 80,
+        "Maximum Price": 350
+    },
+    {
+        "id": 27,
+        "Job Title": "Product Packaging Designer",
+        "Deadline": "2023-11-18",
+        "Description": "Design packaging for a line of beauty products.",
+        "Category": "Graphics Design",
+        "Minimum Price": 70,
+        "Maximum Price": 300
+    },
+    {
+        "id": 28,
+        "Job Title": "JavaScript Developer",
+        "Deadline": "2023-11-25",
+        "Description": "Write clean and efficient JavaScript code for a web application.",
+        "Category": "Web Development",
+        "Minimum Price": 180,
+        "Maximum Price": 700
+    },
+    {
+        "id": 29,
+        "Job Title": "Content Strategist",
+        "Deadline": "2023-11-16",
+        "Description": "Develop content strategies for a tech blog.",
+        "Category": "Digital Marketing",
+        "Minimum Price": 100,
+        "Maximum Price": 400
+    },
+    {
+        "id": 30,
+        "Job Title": "Infographic Designer",
+        "Deadline": "2023-11-12",
+        "Description": "Create informative infographics for a health website.",
+        "Category": "Graphics Design",
+        "Minimum Price": 50,
+        "Maximum Price": 250
+    }
+]

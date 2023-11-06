@@ -1,14 +1,85 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import logo from "../../../assets/job-offer.png"
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
+import signOut from "../../../assets/logout.png";
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                alert('Logged out')
+            })
+            .catch(error => error.message)
+    }
+
     const navItems = <>
-        <li><Link to="/" className="text-lg font-semibold hover:border-b-4 hover:border-orange-600 transition-all ease-in-out">Home</Link></li>
-        <li><Link to="/about" className="text-lg font-semibold hover:border-b-4 hover:border-orange-600 transition-all ease-in-out">About</Link></li>
+        <li>
+            <NavLink to="/"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-md font-bold text-blue-700 border-b-4 pb-1 transition-all ease-in-out border-blue-600" : "text-md font-semibold"
+                }>
+                Home
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to="/addJob"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-md font-bold text-blue-700 border-b-4 pb-1 transition-all ease-in-out border-blue-600" : "text-md font-semibold"
+                }>
+                Add job
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to="/postedJobs"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-md font-bold text-blue-700 border-b-4 pb-1 transition-all ease-in-out border-blue-600" : "text-md font-semibold"
+                }>
+                My Posted Jobs
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to="/myBids"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-md font-bold text-blue-700 border-b-4 pb-1 transition-all ease-in-out border-blue-600" : "text-md font-semibold"
+                }>
+                My Bids
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to="/bidReq"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-md font-bold text-blue-700 border-b-4 pb-1 transition-all ease-in-out border-blue-600" : "text-md font-semibold"
+                }>
+                Bid request
+            </NavLink>
+        </li>
+
+        {!user && <li>
+            <NavLink to="/register"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-md font-bold text-blue-700 border-b-4 pb-1 transition-all ease-in-out border-blue-600" : "text-md font-semibold"
+                }>
+                Register
+            </NavLink>
+        </li>}
+        {!user && <li>
+            <NavLink to="/login"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-md font-bold text-blue-700 border-b-4 pb-1 transition-all ease-in-out border-blue-600" : "text-md font-semibold"
+                }>
+                Login
+            </NavLink>
+        </li>}
+
     </>
 
     return (
-        <div className="navbar bg-base-100 h-28 mb-5">
+        <div className="navbar bg-base-100 h-10 p-5 pl-10 pr-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -18,17 +89,33 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link to="/" className="m-1 normal-case text-xl">
-                    <img src="" alt="" />
-                </Link>
+                <NavLink to="/" className="m-1 flex gap-3 items-center normal-case text-lg">
+                    <img className="w-[40px]" src={logo} alt="" />
+                    <span className="font-bold">JOB FINDER</span>
+                </NavLink>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="flex gap-10 px-1 text-orange-600">
+                <ul className="flex gap-10 px-1 text-gray-600">
                     {navItems}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <button className="btn btn-outline text-orange-500 border-orange-500">Appointment</button>
+            <div className="navbar-end gap-5">
+                {
+                    user && <>
+                        <NavLink to="/profile">
+                            <div className="avatar items-center">
+                                <button className="btn-sm text-md font-semibold">{user?.email}</button>
+                                {/* username dite hbe email er jaigai */}
+                                <div className="w-10 rounded-full">
+                                    <img src={user?.photoURL} />
+                                </div>
+                            </div>
+                        </NavLink>
+                        <a onClick={handleLogout} >
+                            <img className="w-5 ml-10 hover:w-[22px] transition-all ease-in-out" src={signOut} alt="" />
+                        </a>
+                    </>
+                }
             </div>
         </div>
     );
