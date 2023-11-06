@@ -12,6 +12,7 @@ import SignUp from './components/SignUp/SignUp';
 import AddJob from './components/AddJob/AddJob';
 import Home from './components/Home/Home';
 import ErrorPage from './components/Shared/ErrorPage/ErrorPage';
+import BrowseByCategory from './components/BrowseByCategory/BrowseByCategory';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/jobs')
       },
       {
         path: "/login",
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <SignUp></SignUp>
+      },
+      {
+        path: "jobs/:category",
+        element: <BrowseByCategory></BrowseByCategory>
       },
       {
         path: "/addJob",

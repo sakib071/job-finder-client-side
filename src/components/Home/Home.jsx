@@ -1,9 +1,14 @@
+// import { useLoaderData } from "react-router-dom";
 import banner1 from "../../assets/job-banner1.jpg"
 import banner2 from "../../assets/job-banner2.jpg"
 import banner3 from "../../assets/job-banner3.jpg"
 import BrowseByCategory from "../BrowseByCategory/BrowseByCategory";
 
 const Home = () => {
+
+    // const jobs = useLoaderData();
+    // console.log(jobs);
+
     return (
         <div>
             <div className="carousel w-full h-[70vh] mb-20">

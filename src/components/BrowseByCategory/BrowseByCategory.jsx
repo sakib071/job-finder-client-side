@@ -1,13 +1,26 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import CategoryCard from './CategoryCard';
-import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const BrowseByCategory = () => {
+    const { category } = useParams();
+    const [jobs, setJobs] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState('Web Development');
 
     useEffect(() => {
+        fetch(`http://localhost:5000/jobs?category=webDevelopment`)
+            .then((response) => response.json())
+            .then((data) => setJobs(data.filter(job => job.category == selectedCategory)));
+    }, [selectedCategory]);
 
-    }, [])
+    console.log(category);
+
+    const handleCategory = (selectedCategory) => {
+        console.log("Clicked: " + selectedCategory);
+        setSelectedCategory(selectedCategory);
+    }
 
     return (
         <div>
@@ -16,23 +29,38 @@ const BrowseByCategory = () => {
                 <Tabs>
                     <div className="text-center">
                         <TabList>
-                            <Tab>
+                            <Tab onClick={() => handleCategory('webDevelopment')}>
                                 <p className="font-semibold">Web Development</p>
                             </Tab>
-                            <Tab><p className="font-semibold">Digital Marketing</p></Tab>
-                            <Tab><p className="font-semibold">Graphics Design</p></Tab>
+                            <Tab onClick={() => handleCategory('digitalMarketing')}>
+                                <p className="font-semibold">Digital Marketing</p>
+                            </Tab>
+                            <Tab onClick={() => handleCategory('graphicsDesign')}>
+                                <p className="font-semibold">Graphics Design</p>
+                            </Tab>
                         </TabList>
                         <TabPanel>
-                            <h2>Any content 1</h2>
-                            <div>
-                                <CategoryCard></CategoryCard>
+                            <div className='container grid grid-cols-4 p-5 justify-center items-center gap-5 mx-auto mt-10'>
+                                {jobs.map((job) => (
+                                    <CategoryCard key={job.id} job={job} />
+                                ))}
                             </div>
                         </TabPanel>
                         <TabPanel>
-                            <h2>Any content 2</h2>
+                            {/* Content for Digital Marketing tab */}
+                            <div className='container grid grid-cols-4 p-5 justify-center items-center gap-5 mx-auto mt-10'>
+                                {jobs.map((job) => (
+                                    <CategoryCard key={job.id} job={job} />
+                                ))}
+                            </div>
                         </TabPanel>
                         <TabPanel>
-                            <h2>Any content 3</h2>
+                            {/* Content for Graphics Design tab */}
+                            <div className='container grid grid-cols-4 p-5 justify-center items-center gap-5 mx-auto mt-10'>
+                                {jobs.map((job) => (
+                                    <CategoryCard key={job.id} job={job} />
+                                ))}
+                            </div>
                         </TabPanel>
                     </div>
                 </Tabs>
