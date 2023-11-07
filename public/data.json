@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "jobTitle": "Web Developer",
         "deadline": "2023-11-10",
         "description": "Create a responsive website for a client.",
@@ -10,7 +9,6 @@
         "categoryColor": "#FF6969"
     },
     {
-        "id": 2,
         "jobTitle": "Social Media Manager",
         "deadline": "2023-11-15",
         "description": "Manage social media accounts for a small business.",
@@ -20,7 +18,6 @@
         "categoryColor": "#64CCC5"
     },
     {
-        "id": 3,
         "jobTitle": "Logo Designer",
         "deadline": "2023-11-12",
         "description": "Design a unique logo for a startup company.",
@@ -30,7 +27,6 @@
         "categoryColor": "#87C4FF"
     },
     {
-        "id": 4,
         "jobTitle": "Front-end Developer",
         "deadline": "2023-11-20",
         "description": "Build the front-end of a new web application.",
@@ -40,7 +36,6 @@
         "categoryColor": "#FF6969"
     },
     {
-        "id": 5,
         "jobTitle": "Content Writer",
         "deadline": "2023-11-14",
         "description": "Write blog posts for a technology website.",
@@ -50,7 +45,6 @@
         "categoryColor": "#64CCC5"
     },
     {
-        "id": 6,
         "jobTitle": "UI/UX Designer",
         "deadline": "2023-11-18",
         "description": "Design the user interface for a mobile app.",
@@ -60,7 +54,6 @@
         "categoryColor": "#87C4FF"
     },
     {
-        "id": 7,
         "jobTitle": "Back-end Developer",
         "deadline": "2023-11-22",
         "description": "Develop the server-side logic for a web application.",
@@ -70,7 +63,6 @@
         "categoryColor": "#FF6969"
     },
     {
-        "id": 8,
         "jobTitle": "SEO Specialist",
         "deadline": "2023-11-16",
         "description": "Optimize a website for search engines.",
@@ -80,7 +72,6 @@
         "categoryColor": "#64CCC5"
     },
     {
-        "id": 9,
         "jobTitle": "Graphic Illustrator",
         "deadline": "2023-11-12",
         "description": "Create custom illustrations for a children's book.",
@@ -90,7 +81,6 @@
         "categoryColor": "#87C4FF"
     },
     {
-        "id": 10,
         "jobTitle": "Full Stack Developer",
         "deadline": "2023-11-25",
         "description": "Develop both the front-end and back-end of a web application.",
@@ -100,7 +90,6 @@
         "categoryColor": "#FF6969"
     },
     {
-        "id": 11,
         "jobTitle": "Email Marketer",
         "deadline": "2023-11-14",
         "description": "Create and manage email marketing campaigns for an e-commerce store.",
@@ -110,7 +99,6 @@
         "categoryColor": "#64CCC5"
     },
     {
-        "id": 12,
         "jobTitle": "Package Designer",
         "deadline": "2023-11-18",
         "description": "Design packaging for a new line of food products.",
@@ -120,7 +108,6 @@
         "categoryColor": "#87C4FF"
     },
     {
-        "id": 13,
         "jobTitle": "WordPress Developer",
         "deadline": "2023-11-22",
         "description": "Build a WordPress website for a client.",
@@ -130,7 +117,6 @@
         "categoryColor": "#FF6969"
     },
     {
-        "id": 14,
         "jobTitle": "Social Media Advertiser",
         "deadline": "2023-11-16",
         "description": "Create and manage social media ads for a fashion brand.",
@@ -140,7 +126,6 @@
         "categoryColor": "#64CCC5"
     },
     {
-        "id": 15,
         "jobTitle": "Poster Designer",
         "deadline": "2023-11-14",
         "description": "Design posters for an upcoming music festival.",
@@ -150,7 +135,6 @@
         "categoryColor": "#87C4FF"
     },
     {
-        "id": 16,
         "jobTitle": "Business Manager",
         "deadline": "2023-11-20",
         "description": "Build an online store for a small business.",
@@ -160,7 +144,6 @@
         "categoryColor": "#FF6969"
     },
     {
-        "id": 17,
         "jobTitle": "Content Marketing Specialist",
         "deadline": "2023-11-15",
         "description": "Plan and execute content marketing strategies for a tech startup.",
@@ -170,7 +153,6 @@
         "categoryColor": "#64CCC5"
     },
     {
-        "id": 18,
         "jobTitle": "Brochure Designer",
         "deadline": "2023-11-12",
         "description": "Design brochures for a travel agency.",
@@ -180,7 +162,6 @@
         "categoryColor": "#87C4FF"
     },
     {
-        "id": 19,
         "jobTitle": "Mobile App Developer",
         "deadline": "2023-11-24",
         "description": "Develop a mobile app for a startup company.",
@@ -190,7 +171,6 @@
         "categoryColor": "#FF6969"
     },
     {
-        "id": 20,
         "jobTitle": "Social Media Content Creator",
         "deadline": "2023-11-17",
         "description": "Create engaging social media content for a beauty brand.",
@@ -200,7 +180,6 @@
         "categoryColor": "#64CCC5"
     },
     {
-        "id": 21,
         "jobTitle": "Illustration Artist",
         "deadline": "2023-11-13",
         "description": "Create colorful illustrations for a children's book series.",
@@ -210,7 +189,6 @@
         "categoryColor": "#87C4FF"
     },
     {
-        "id": 22,
         "jobTitle": "Database Administrator",
         "deadline": "2023-11-23",
         "description": "Manage and optimize a database for a software company.",
@@ -220,7 +198,6 @@
         "categoryColor": "#FF6969"
     },
     {
-        "id": 23,
         "jobTitle": "Search Engine Marketing Specialist",
         "deadline": "2023-11-14",
         "description": "Create and manage paid search campaigns for an e-commerce store.",
@@ -230,7 +207,6 @@
         "categoryColor": "#64CCC5"
     },
     {
-        "id": 24,
         "jobTitle": "Flyer Designer",
         "deadline": "2023-11-19",
         "description": "Design eye-catching flyers for a local event.",
@@ -240,7 +216,6 @@
         "categoryColor": "#87C4FF"
     },
     {
-        "id": 25,
         "jobTitle": "Game Developer",
         "deadline": "2023-11-21",
         "description": "Create an addictive mobile game for a gaming startup.",
@@ -250,7 +225,6 @@
         "categoryColor": "#FF6969"
     },
     {
-        "id": 26,
         "jobTitle": "Email Copywriter",
         "deadline": "2023-11-15",
         "description": "Write compelling email copy for a subscription service.",
@@ -260,7 +234,6 @@
         "categoryColor": "#64CCC5"
     },
     {
-        "id": 27,
         "jobTitle": "Product Packaging Designer",
         "deadline": "2023-11-18",
         "description": "Design packaging for a line of beauty products.",
@@ -270,7 +243,6 @@
         "categoryColor": "#87C4FF"
     },
     {
-        "id": 28,
         "jobTitle": "JavaScript Developer",
         "deadline": "2023-11-25",
         "description": "Write clean and efficient JavaScript code for a web application.",
@@ -280,7 +252,6 @@
         "categoryColor": "#FF6969"
     },
     {
-        "id": 29,
         "jobTitle": "Content Marketing Manager",
         "deadline": "2023-11-30",
         "description": "Lead content marketing campaigns for a digital agency.",
@@ -290,7 +261,6 @@
         "categoryColor": "#64CCC5"
     },
     {
-        "id": 30,
         "jobTitle": "E-commerce Website Developer",
         "deadline": "2023-11-27",
         "description": "Build an e-commerce website for an online store.",

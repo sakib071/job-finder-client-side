@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProviders";
-import { ToastContainer, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const AddJob = () => {
 
     const { user } = useContext(AuthContext);
+    const location = useLocation();
     const navigate = useNavigate();
     // console.log(user);
     const [selectedCategory, setSelectedCategory] = useState([]);
@@ -58,31 +59,22 @@ const AddJob = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
-                    // alert('Job added successfully');
-                    toast.success('Job added successfully', {
-                        position: "top-right",
-                        autoClose: 1000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
+                    Swal.fire({
+                        icon: "success",
+                        title: "Job added successfully",
+                        showConfirmButton: false,
+                        timer: 1500
                     });
+                    navigate(location?.state ? location?.state : '/postedJobs');
                 }
             })
             .catch(err => {
-                toast.error('Failed, Try again!', {
-                    position: "top-right",
-                    autoClose: 1000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!"
                 });
                 console.log(err)
             })
@@ -146,7 +138,6 @@ const AddJob = () => {
                     <input type="submit" className="btn bg-blue-500 text-white hover:bg-blue-600 btn-block" value="Add Job" />
                 </div>
             </form>
-            <ToastContainer />
         </div>
     );
 };

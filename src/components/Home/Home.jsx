@@ -8,8 +8,6 @@ import Specialty from "../Specialty/Specialty";
 
 const Home = () => {
 
-    // const jobs = useLoaderData();
-    // console.log(jobs);
 
     return (
         <div>
