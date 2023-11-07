@@ -3,6 +3,8 @@ import banner1 from "../../assets/job-banner1.jpg"
 import banner2 from "../../assets/job-banner2.jpg"
 import banner3 from "../../assets/job-banner3.jpg"
 import BrowseByCategory from "../BrowseByCategory/BrowseByCategory";
+import Review from "../Review/Review";
+import Specialty from "../Specialty/Specialty";
 
 const Home = () => {
 
@@ -53,6 +55,8 @@ const Home = () => {
                 </div>
             </div>
             <BrowseByCategory></BrowseByCategory>
+            <Review></Review>
+            <Specialty></Specialty>
         </div>
     );
 };

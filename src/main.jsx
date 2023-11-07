@@ -13,6 +13,7 @@ import AddJob from './components/AddJob/AddJob';
 import Home from './components/Home/Home';
 import ErrorPage from './components/Shared/ErrorPage/ErrorPage';
 import BrowseByCategory from './components/BrowseByCategory/BrowseByCategory';
+import MyPostedJobs from './components/MyPostedJobs/MyPostedJobs';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/addJob",
-        element: <AddJob></AddJob>
+        element: <AddJob></AddJob>,
+        loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
+
+      },
+      {
+        path: "/postedJobs",
+        element: <MyPostedJobs></MyPostedJobs>
       }
     ]
   },

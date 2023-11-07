@@ -3,7 +3,7 @@ import { BiTime } from 'react-icons/bi';
 import { MdOutlineAttachMoney } from 'react-icons/md';
 
 const CategoryCard = ({ job }) => {
-    const { id, jobTitle, deadline, description, category, maximumPrice, minimumPrice, categoryColor } = job;
+    const { id, jobTitle, deadline, description, category, maximumPrice, minimumPrice } = job;
     console.log(id);
 
 
@@ -12,7 +12,7 @@ const CategoryCard = ({ job }) => {
             <div className="rounded-md w-80 h-full bg-base-100 hover:shadow-lg transition-all ease-in-out border-2">
                 <div className="card-body text-left">
                     <h2 className="text-lg font-semibold">{jobTitle}</h2>
-                    <div className="badge text-xs mb-3 py-3 text-semibold text-white" style={{ backgroundColor: categoryColor }}>{category}</div>
+                    <div className="badge badge-outline border-blue-500 text-blue-500 font-semibold px-3 text-xs mb-3 py-3 text-semibold" >{category}</div>
                     <p className="text-left">{description}</p>
                     <div className="flex gap-3">
                         <div className="text-sm flex gap-1 items-center border-r-2 border-gray-400 pr-4"> <BiTime /> <span>{deadline}</span> </div>
