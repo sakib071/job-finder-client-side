@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProviders';
 
-const PostedJobs = ({ postedJob, handleDelete, handlePostedJobConfirm }) => {
-    const { _id, jobTitle, deadline, description, category, maximumPrice, minimumPrice } = postedJob;
+const Bids = ({ bids, handleDelete, handlePostedJobConfirm }) => {
+    const { user } = useContext(AuthContext);
+    const { _id, jobTitle, deadline, status } = bids;
 
 
     return (
         <tr>
-            <td className='w-32'>{jobTitle}</td>
-            <td>{category}</td>
+            <td >{jobTitle}</td>
+            <td >{user?.email}</td>
             <td>{deadline}</td>
-            <td className='w-96'>{description}</td>
-            <td>${maximumPrice}</td>
-            <td>${minimumPrice}</td>
             <th>
                 {
                     status === 'confirm' ? <span className='uppercase  text-green-600'>Confirmed</span> : <Link to={`/updateJob/${_id}`} onClick={() => handlePostedJobConfirm(_id)} className="btn bg-blue-500 text-white btn-sm hover:bg-blue-600 ">Confirm</Link>
@@ -27,15 +27,12 @@ const PostedJobs = ({ postedJob, handleDelete, handlePostedJobConfirm }) => {
     );
 };
 
-PostedJobs.propTypes = {
+Bids.propTypes = {
     postedJob: PropTypes.shape({
         _id: PropTypes.string.isRequired,
         jobTitle: PropTypes.string.isRequired,
         deadline: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        category: PropTypes.string.isRequired,
-        maximumPrice: PropTypes.number.isRequired,
-        minimumPrice: PropTypes.number.isRequired,
+        status: PropTypes.string.isRequired,
     }).isRequired,
     handleDelete: PropTypes.func.isRequired,
     handlePostedJobConfirm: PropTypes.func.isRequired,
@@ -43,4 +40,4 @@ PostedJobs.propTypes = {
 
 
 
-export default PostedJobs;
+export default Bids;

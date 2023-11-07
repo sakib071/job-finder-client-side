@@ -1,19 +1,19 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { AuthContext } from "../providers/AuthProviders";
-import PostedJobs from "./PostedJobs";
+import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
+import Bids from "./Bids";
 
-const MyPostedJobs = () => {
+const MyBids = () => {
 
     const { user } = useContext(AuthContext);
-    const [postedJob, setPostedJob] = useState([]);
+    const [bids, setBids] = useState([]);
     // console.log(user.email);
-    const url = `http://localhost:5000/jobs?email=${user?.email}`;
+    const url = `http://localhost:5000/bids`;
     useEffect(() => {
         axios.get(url)
             .then(res => {
-                setPostedJob(res.data);
+                setBids(res.data);
             })
     }, [url]);
 
@@ -29,7 +29,7 @@ const MyPostedJobs = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/postedJobs/${id}`, {
+                fetch(`http://localhost:5000/bids/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -41,8 +41,8 @@ const MyPostedJobs = () => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
-                            const remaining = postedJob.filter(postedJob => postedJob._id !== id);
-                            setPostedJob(remaining);
+                            const remaining = bids.filter(bids => bids._id !== id);
+                            setBids(remaining);
                         }
                     }).catch(error => {
                         console.error("Error while deleting:", error);
@@ -58,34 +58,31 @@ const MyPostedJobs = () => {
     }
 
     return (
-        <div>
-            <div className="max-w-6xl mt-10 mb-5 text-left mx-auto text-md font-semibold">
-                <h3 className="">Jobs posted by: <span className="text-blue-500">{user?.email}</span> </h3>
-                <h3 className="">Your Posted Jobs: <span className="text-blue-500">{postedJob.length}</span> </h3>
+        <div className="h-[60vh]">
+            <div className="max-w-2xl mt-10 mb-5 text-left mx-auto text-md font-semibold">
+                <h3 className="">Bids: <span className="text-blue-500">{user?.email}</span> </h3>
+                <h3 className="">Your Bids: <span className="text-blue-500">{bids.length}</span> </h3>
             </div>
             <div className="overflow-x-auto">
-                <table className="table max-w-fit mx-auto">
+                <table className="table max-w-3xl mx-auto">
                     <thead className="text-center bg-blue-100 text-blue-500">
                         <tr>
                             <th>Job title</th>
-                            <th>Category</th>
+                            <th>Email</th>
                             <th>Deadline</th>
-                            <th>Description</th>
-                            <th>Maximum Salary</th>
-                            <th>Minimum Salary</th>
                             <th>Status</th>
-                            <th>Delete</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody className="text-center">
                         {
-                            postedJob.map(postedJob =>
-                                <PostedJobs
-                                    key={postedJob._id}
-                                    postedJob={postedJob}
+                            bids.map(bids =>
+                                <Bids
+                                    key={bids._id}
+                                    bids={bids}
                                     handleDelete={handleDelete}
                                 >
-                                </PostedJobs>)
+                                </Bids>)
 
                         }
 
@@ -96,4 +93,4 @@ const MyPostedJobs = () => {
     );
 };
 
-export default MyPostedJobs;
+export default MyBids;

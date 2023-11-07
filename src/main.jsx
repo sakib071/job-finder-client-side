@@ -14,6 +14,8 @@ import Home from './components/Home/Home';
 import ErrorPage from './components/Shared/ErrorPage/ErrorPage';
 import BrowseByCategory from './components/BrowseByCategory/BrowseByCategory';
 import MyPostedJobs from './components/MyPostedJobs/MyPostedJobs';
+import UpdateJob from './components/MyPostedJobs/UpdateJob';
+import MyBids from './components/Home/Bids/MyBids';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
       {
         path: "/postedJobs",
         element: <MyPostedJobs></MyPostedJobs>
+      },
+      {
+        path: "/updateJob/:id",
+        element: <UpdateJob></UpdateJob>
+      },
+      {
+        path: "/myBids",
+        element: <MyBids></MyBids>
       }
     ]
   },
