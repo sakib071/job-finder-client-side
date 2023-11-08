@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { AuthContext } from "../../providers/AuthProviders";
+import { AuthContext } from "../providers/AuthProviders";
 import Swal from "sweetalert2";
 import Bids from "./Bids";
 

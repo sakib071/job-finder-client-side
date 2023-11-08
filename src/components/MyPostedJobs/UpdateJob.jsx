@@ -10,6 +10,7 @@ const UpdateJob = () => {
     const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState([]);
     const [jobData, setJobData] = useState({});
+    console.log(jobData);
 
     const data = useLoaderData();
     const { _id, jobTitle, deadline, description, category, maximumPrice, minimumPrice } = data;

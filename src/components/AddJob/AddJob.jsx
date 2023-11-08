@@ -8,11 +8,9 @@ const AddJob = () => {
     const { user } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-    // console.log(user);
     const [selectedCategory, setSelectedCategory] = useState([]);
 
     const handleCategoryChange = (event) => {
-        // Update the selectedOption state when the dropdown value changes
         setSelectedCategory(event.target.value);
     }
     console.log(selectedCategory);
@@ -28,17 +26,7 @@ const AddJob = () => {
         const minimumPrice = form.minimumPrice.value;
         const maximumPrice = form.maximumPrice.value;
         const category = form.category.value;
-        // let categoryColor = '';
-        // if (category === 'webDevelopment') {
-        //     const categoryColor = '#FF6969';
-        //     return categoryColor;
-        // } else if (category === 'digitalMarketing') {
-        //     const categoryColor = '#64CCC5';
-        //     return categoryColor;
-        // } else if (category === 'graphicsDesign') {
-        //     const categoryColor = '87C4FF';
-        //     return categoryColor;
-        // }
+
         const addJob = {
             email,
             jobTitle,
@@ -59,7 +47,6 @@ const AddJob = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         icon: "success",

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
-import { AuthContext } from '../../providers/AuthProviders';
+import { AuthContext } from '../providers/AuthProviders';
 
 const Bids = ({ bids, handleDelete }) => {
     const { user } = useContext(AuthContext);
