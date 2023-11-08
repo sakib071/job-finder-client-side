@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 
-const Bids = ({ bids, handleDelete, handlePostedJobConfirm }) => {
+const Bids = ({ bids, handleDelete }) => {
     const { user } = useContext(AuthContext);
     const { _id, jobTitle, deadline, status } = bids;
 
@@ -15,7 +14,7 @@ const Bids = ({ bids, handleDelete, handlePostedJobConfirm }) => {
             <td>{deadline}</td>
             <th>
                 {
-                    status === 'confirm' ? <span className='uppercase  text-green-600'>Confirmed</span> : <Link to={`/updateJob/${_id}`} onClick={() => handlePostedJobConfirm(_id)} className="btn bg-blue-500 text-white btn-sm hover:bg-blue-600 ">Confirm</Link>
+                    status === 'confirm' ? <span className='uppercase  text-green-600'>Confirmed</span> : <span className='text-yellow-500'>Pending</span>
                 }
             </th>
             <td>
@@ -28,14 +27,14 @@ const Bids = ({ bids, handleDelete, handlePostedJobConfirm }) => {
 };
 
 Bids.propTypes = {
-    postedJob: PropTypes.shape({
+    bids: PropTypes.shape({
         _id: PropTypes.string.isRequired,
+        bids: PropTypes.string.isRequired,
         jobTitle: PropTypes.string.isRequired,
         deadline: PropTypes.string.isRequired,
         status: PropTypes.string.isRequired,
     }).isRequired,
     handleDelete: PropTypes.func.isRequired,
-    handlePostedJobConfirm: PropTypes.func.isRequired,
 };
 
 

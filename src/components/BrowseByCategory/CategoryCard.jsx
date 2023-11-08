@@ -8,7 +8,7 @@ import { AuthContext } from '../providers/AuthProviders';
 const CategoryCard = ({ job }) => {
     const { user } = useContext(AuthContext);
     const { _id, jobTitle, deadline, description, category, maximumPrice, minimumPrice } = job;
-    const email = user.email;
+    const email = user?.email;
     // console.log(email);
 
     const handleBid = _id => {

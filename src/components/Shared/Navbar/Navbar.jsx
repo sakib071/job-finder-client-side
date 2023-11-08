@@ -3,6 +3,7 @@ import logo from "../../../assets/job-offer.png"
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import signOut from "../../../assets/logout.png";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
 
@@ -12,7 +13,7 @@ const Navbar = () => {
     const handleLogout = () => {
         logOut()
             .then(() => {
-                alert('Logged out')
+                Swal.fire("Logout Successful!");
             })
             .catch(error => error.message)
     }
@@ -51,7 +52,7 @@ const Navbar = () => {
             </NavLink>
         </li>
         <li>
-            <NavLink to="/bidReq"
+            <NavLink to="/bidRequest"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-md font-bold text-blue-700 border-b-4 pb-1 transition-all ease-in-out border-blue-600" : "text-md font-semibold"
                 }>
