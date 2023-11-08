@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../providers/AuthProviders";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 const UpdateJob = () => {
@@ -11,8 +11,13 @@ const UpdateJob = () => {
     const [selectedCategory, setSelectedCategory] = useState([]);
     const [jobData, setJobData] = useState({});
 
-    const id = location?.state?._id; // Pass the jobId when navigating to this component.
-    console.log(jobData.jobTitle);
+    const data = useLoaderData();
+    const { _id, jobTitle, deadline, description, category, maximumPrice, minimumPrice } = data;
+
+    console.log(data);
+
+    const id = location?.state?._id;
+    console.log(jobTitle);
 
     useEffect(() => {
         // Fetch job data based on the jobId when the component mounts.
@@ -38,20 +43,19 @@ const UpdateJob = () => {
         const description = form.description.value;
         const minimumPrice = form.minimumPrice.value;
         const maximumPrice = form.maximumPrice.value;
-
         const updatedJob = {
-            ...jobData, // Retain the existing job data
             email,
             jobTitle,
             deadline,
             description,
             minimumPrice,
             maximumPrice,
-            category: selectedCategory, // Use the selectedCategory
+            category: selectedCategory,
         };
+        console.log(updatedJob);
 
-        fetch(`http://localhost:5000/jobs/${id}`, {
-            method: 'PATCH', // Use the HTTP PUT method to update the job
+        fetch(`http://localhost:5000/jobs/${_id}`, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -66,7 +70,7 @@ const UpdateJob = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    navigate('/postedJobs'); // Redirect to the list of posted jobs
+                    navigate('/postedJobs');
                 } else {
                     Swal.fire({
                         icon: "error",
@@ -87,17 +91,17 @@ const UpdateJob = () => {
                     </div>
 
                     <div className="form-control">
-                        <input type="text" name="jobTitle" defaultValue={jobData.jobTitle} className="input input-bordered rounded-md input-sm w-56" required />
+                        <input type="text" name="jobTitle" defaultValue={jobTitle} className="input input-bordered rounded-md input-sm w-56" required />
                     </div>
 
                     <div className="form-control">
-                        <input type="text" placeholder="Deadline" name="deadline" className="input input-bordered rounded-md input-sm w-56" required defaultValue={jobData.deadline} />
+                        <input type="text" defaultValue={deadline} name="deadline" className="input input-bordered rounded-md input-sm w-56" required />
                     </div>
 
                     <div className="form-control">
                         <select
                             name="category"
-                            value={selectedCategory}
+                            defaultValue={category}
                             onChange={handleCategoryChange}
                             className="select select-bordered w-56 select-sm"
                             required
@@ -110,11 +114,11 @@ const UpdateJob = () => {
                     </div>
 
                     <div className="form-control">
-                        <input type="text" placeholder="Minimum Price" name="minimumPrice" className="input input-bordered rounded-md input-sm w-56" required defaultValue={jobData.minimumPrice} />
+                        <input type="text" defaultValue={minimumPrice} name="minimumPrice" className="input input-bordered rounded-md input-sm w-56" required />
                     </div>
 
                     <div className="form-control">
-                        <input type="text" placeholder="Maximum Price" name="maximumPrice" className="input input-bordered rounded-md input-sm w-56" required defaultValue={jobData.maximumPrice} />
+                        <input type="text" defaultValue={maximumPrice} name="maximumPrice" className="input input-bordered rounded-md input-sm w-56" required />
                     </div>
 
                     <textarea
@@ -122,12 +126,12 @@ const UpdateJob = () => {
                         name="description"
                         className="textarea w-full textarea-bordered rounded-md"
                         required
-                        defaultValue={jobData.description}
+                        defaultValue={description}
                     ></textarea>
                 </div>
 
                 <div className="form-control mt-6">
-                    <input type="submit" className="btn bg-blue-500 text-white hover-bg-blue-600 btn-block" value="Update Job" />
+                    <input type="submit" className="btn bg-blue-500 text-white hover:bg-blue-600 hover-bg-blue-600 btn-block" value="Update Job" />
                 </div>
             </form>
         </div>

@@ -8,6 +8,8 @@ const MyPostedJobs = () => {
 
     const { user } = useContext(AuthContext);
     const [postedJob, setPostedJob] = useState([]);
+    // const [updates, setUpdates] = useState([]);
+
     // console.log(user.email);
     const url = `http://localhost:5000/jobs?email=${user?.email}`;
     useEffect(() => {
@@ -57,6 +59,28 @@ const MyPostedJobs = () => {
         });
     }
 
+    // const handleUpdate = id => {
+    //     fetch(`http://localhost:5000/jobs/${id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify()
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             if (data.modifiedCount > 0) {
+    //                 //update status
+    //                 const remaining = updates.filter(update => update._id !== id);
+    //                 const updated = updates.find(update => update._id === id);
+    //                 updated.status = 'confirm';
+    //                 const newBids = [updated, ...remaining];
+    //                 setUpdates(newBids);
+    //             }
+    //         })
+    // }
+
     return (
         <div>
             <div className="max-w-6xl mt-10 mb-5 text-left mx-auto text-md font-semibold">
@@ -73,7 +97,7 @@ const MyPostedJobs = () => {
                             <th>Description</th>
                             <th>Maximum Salary</th>
                             <th>Minimum Salary</th>
-                            <th>Status</th>
+                            <th>Update</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -84,6 +108,7 @@ const MyPostedJobs = () => {
                                     key={postedJob._id}
                                     postedJob={postedJob}
                                     handleDelete={handleDelete}
+                                    // handleUpdate={handleUpdate}
                                 >
                                 </PostedJobs>)
 

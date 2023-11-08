@@ -105,8 +105,7 @@ const Navbar = () => {
                     user && <>
                         <NavLink to="/profile">
                             <div className="avatar items-center">
-                                <button className="btn-sm text-md font-semibold">{user?.email}</button>
-                                {/* username dite hbe email er jaigai */}
+                                <button className="btn-sm text-md font-semibold">{user?.displayName}</button>
                                 <div className="w-10 rounded-full">
                                     <img src={user?.photoURL} />
                                 </div>

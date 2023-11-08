@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const PostedJobs = ({ postedJob, handleDelete, handlePostedJobConfirm }) => {
+const PostedJobs = ({ postedJob, handleDelete }) => {
     const { _id, jobTitle, deadline, description, category, maximumPrice, minimumPrice } = postedJob;
 
 
@@ -14,9 +14,11 @@ const PostedJobs = ({ postedJob, handleDelete, handlePostedJobConfirm }) => {
             <td>${maximumPrice}</td>
             <td>${minimumPrice}</td>
             <th>
-                {
-                    status === 'confirm' ? <span className='uppercase  text-green-600'>Confirmed</span> : <Link to={`/updateJob/${_id}`} onClick={() => handlePostedJobConfirm(_id)} className="btn bg-blue-500 text-white btn-sm hover:bg-blue-600 ">Confirm</Link>
-                }
+                <Link to={{
+                    pathname: `/updateJob/${_id}`,
+                    state: { jobData: postedJob }
+                }} className="btn bg-blue-500 text-white btn-sm hover:bg-blue-600 ">Update</Link>
+
             </th>
             <td>
                 <button onClick={() => handleDelete(_id)} className="btn btn-circle btn-sm hover:bg-red-500 hover:text-white">
@@ -38,7 +40,7 @@ PostedJobs.propTypes = {
         minimumPrice: PropTypes.number.isRequired,
     }).isRequired,
     handleDelete: PropTypes.func.isRequired,
-    handlePostedJobConfirm: PropTypes.func.isRequired,
+    handleUpdate: PropTypes.func.isRequired,
 };
 
 

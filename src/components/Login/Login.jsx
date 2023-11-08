@@ -1,15 +1,13 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/Forgot password-rafiki.svg'
 import { useContext } from 'react';
-import axios from 'axios';
 import { AuthContext } from '../providers/AuthProviders';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext);
-    const location = useLocation();
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleLogin = event => {
@@ -17,34 +15,22 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(email, password);
 
         signIn(email, password)
             .then(result => {
-                const loggedInUser = result.user;
-                console.log(loggedInUser);
-                const user = { email };
-                //get access token
-                axios.post('http://localhost:5000/jwt', user, {
-                    withCredentials: true
-                })
-                    .then(res => {
-                        console.log(res.data)
-                        if (res.data) {
-                            navigate(location?.state ? location?.state : '/');
-                            toast.success('Login successfully', {
-                                position: "top-right",
-                                autoClose: 1000,
-                                hideProgressBar: false,
-                                closeOnClick: true,
-                                pauseOnHover: true,
-                                draggable: true,
-                                progress: undefined,
-                                theme: "light",
-                            });
-                        }
-                    })
-
+                console.log(result.user);
+                toast.success('Login successfully', {
+                    position: "top-right",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                navigate('/');
+                event.target.reset();
             })
             .catch(error => {
                 toast.error('Login failed, Try again!', {
@@ -59,6 +45,19 @@ const Login = () => {
                 });
                 console.error(error)
             });
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                toast.success('Login successfully');
+                navigate('/');
+                console.log(result.user)
+            })
+            .catch(error => {
+                toast.error('Login failed, Try again!');
+                console.error(error)
+            })
     }
 
     return (
@@ -87,6 +86,10 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <input type="submit" className="btn bg-blue-500 hover:bg-blue-600 text-white font-bold text-md" value="Login" />
+                        </div>
+                        <div className="divider">OR</div>
+                        <div className="form-control mt-1">
+                            <button onClick={handleGoogleSignIn} className="btn hover:bg-red-600 bg-red-500 text-white">Google</button>
                         </div>
                         <p className='text-center'>New to Job Finder? <Link to="/register" className='text-blue-500 font-bold'>Sign UP</Link></p>
                     </form>

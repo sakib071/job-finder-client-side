@@ -14,7 +14,7 @@ const Bids = ({ bids, handleDelete }) => {
             <td>{deadline}</td>
             <th>
                 {
-                    status === 'confirm' ? <span className='uppercase  text-green-600'>Confirmed</span> : status === 'reject' ? <span className='uppercase  text-red-600'>Rejected</span> : <span className='text-yellow-500'>Pending</span>
+                    status === 'confirm' ? <span className='  text-blue-500'>In progress</span> : status === 'reject' ? <span className='  text-red-600'>Canceled</span> : <span className='text-yellow-500 '>Pending</span>
                 }
             </th>
             <td>

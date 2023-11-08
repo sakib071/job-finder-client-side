@@ -15,14 +15,14 @@ const BidReqRow = ({ bids, handleDelete, handleBidConfirm, handleBidReject }) =>
             <th>
                 {
                     status === 'confirm' ? (
-                        <span className='uppercase text-green-600'>Accepted</span>
+                        <span className=' text-green-600'>Accepted</span>
                     ) : status === 'reject' ? (
-                        <span className='uppercase text-red-600'>Rejected</span>
+                        <span className=' text-red-600'>Rejected</span>
                     ) : (
                         <div className='space-x-1'>
                             <button
                                 onClick={() => {
-                                    handleBidConfirm(_id); // This should update the status to 'Accepted'
+                                    handleBidConfirm(_id);
                                 }}
                                 className="btn bg-blue-500 text-white btn-sm hover:bg-blue-600"
                             >
@@ -30,7 +30,7 @@ const BidReqRow = ({ bids, handleDelete, handleBidConfirm, handleBidReject }) =>
                             </button>
                             <button
                                 onClick={() => {
-                                    handleBidReject(_id); // This should update the status to 'Rejected'
+                                    handleBidReject(_id);
                                 }}
                                 className="btn bg-red-500 text-white btn-sm hover-bg-red-600"
                             >
@@ -40,9 +40,6 @@ const BidReqRow = ({ bids, handleDelete, handleBidConfirm, handleBidReject }) =>
                     )
                 }
 
-                {/* {
-                    status === 'confirm' ? <span className='uppercase  text-green-600'>Rejected</span> : <button to={`/updateJob/${_id}`} onClick={() => handleBidConfirm(_id)} className="btn bg-blue-500 text-white btn-sm hover:bg-blue-600 ">Reject</button>
-                } */}
             </th>
             <td>
                 <button onClick={() => handleDelete(_id)} className="btn btn-circle btn-sm hover:bg-red-500 hover:text-white">
