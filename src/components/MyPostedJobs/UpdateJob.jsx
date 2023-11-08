@@ -83,18 +83,26 @@ const UpdateJob = () => {
             <form onSubmit={handleUpdateJob} className="card-body">
                 <div className="grid grid-cols-2 gap-5">
                     <div className="form-control">
+                        <label className=" label label-text" >Email</label>
+
                         <input type="name" name="name" defaultValue={user?.email} className="input input-bordered rounded-md input-sm w-56" readOnly />
                     </div>
 
                     <div className="form-control">
+                        <label className=" label label-text" >Job Title</label>
+
                         <input type="text" name="jobTitle" defaultValue={jobTitle} className="input input-bordered rounded-md input-sm w-56" required />
                     </div>
 
                     <div className="form-control">
+                        <label className=" label label-text" >Deadline</label>
+
                         <input type="text" defaultValue={deadline} name="deadline" className="input input-bordered rounded-md input-sm w-56" required />
                     </div>
 
                     <div className="form-control">
+                        <label className=" label label-text" >Job Category</label>
+
                         <select
                             name="category"
                             defaultValue={category}
@@ -110,20 +118,28 @@ const UpdateJob = () => {
                     </div>
 
                     <div className="form-control">
+                        <label className=" label label-text" >Minimum Price</label>
+
                         <input type="text" defaultValue={minimumPrice} name="minimumPrice" className="input input-bordered rounded-md input-sm w-56" required />
                     </div>
 
                     <div className="form-control">
+                        <label className=" label label-text" >Maximum Price</label>
+
                         <input type="text" defaultValue={maximumPrice} name="maximumPrice" className="input input-bordered rounded-md input-sm w-56" required />
                     </div>
 
-                    <textarea
-                        placeholder="Description"
-                        name="description"
-                        className="textarea w-full textarea-bordered rounded-md"
-                        required
-                        defaultValue={description}
-                    ></textarea>
+                    <div>
+                        <label className=" label label-text" >Description</label>
+                        <textarea
+                            placeholder="Description"
+                            name="description"
+                            className="textarea w-full textarea-bordered rounded-md"
+                            required
+                            defaultValue={description}
+                        ></textarea>
+                    </div>
+
                 </div>
 
                 <div className="form-control mt-6">

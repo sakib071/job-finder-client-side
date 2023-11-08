@@ -1,60 +1,11 @@
 import PropTypes from 'prop-types';
-// import { useContext } from 'react';
 import { BiTime } from 'react-icons/bi';
 import { MdOutlineAttachMoney } from 'react-icons/md';
-// import Swal from 'sweetalert2';
-// import { AuthContext } from '../providers/AuthProviders';
 import { Link } from 'react-router-dom';
 
 const CategoryCard = ({ job }) => {
-    // const { user } = useContext(AuthContext);
+
     const { _id, jobTitle, deadline, description, category, maximumPrice, minimumPrice } = job;
-    // const email = user?.email;
-    // console.log(email);
-
-    // const handleBid = _id => {
-    //     console.log(_id);
-    //     console.log(jobTitle);
-    //     const addJob = {
-    //         email,
-    //         jobTitle,
-    //         deadline,
-    //         description,
-    //         minimumPrice,
-    //         maximumPrice,
-    //         category
-    //     }
-    //     console.log(addJob);
-
-    //     fetch('http://localhost:5000/bids', {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(addJob)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             // console.log(data);
-    //             if (data.insertedId) {
-    //                 Swal.fire({
-    //                     icon: "success",
-    //                     title: "Bids done successfully",
-    //                     showConfirmButton: false,
-    //                     timer: 1500
-    //                 });
-    //             }
-    //         })
-    //         .catch(err => {
-    //             Swal.fire({
-    //                 icon: "error",
-    //                 title: "Oops...",
-    //                 text: "Something went wrong!"
-    //             });
-    //             console.log(err)
-    //         })
-
-    // }
 
     return (
         <div>

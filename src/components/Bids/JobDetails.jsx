@@ -60,52 +60,61 @@ const JobDetails = () => {
         <div className="max-w-xl border-2 p-5 rounded-md mx-auto mt-20 mb-28 text-center">
             <h3 className="text-3xl font-bold">Job Details</h3>
             <div className="card-body">
+                <div className="grid grid-cols-2 gap-5 text-left">
+                    <div className="">
+                        <label className="label label-text p-0" >Email</label>
+                        <p className="font-semibold">{user?.email}</p>
+                    </div>
+
+                    <div className="">
+                        <label className="label label-text p-0" >Job Title</label>
+                        <p className="font-semibold">{jobTitle}</p>
+                    </div>
+
+                    <div className="">
+                        <label className="label label-text p-0" >Deadline</label>
+                        <p className="font-semibold">{deadline}</p>
+                    </div>
+
+                    <div className="">
+                        <label className="label label-text p-0" >Job Category</label>
+                        <p className="font-semibold">{category}</p>
+                    </div>
+
+                    <div className="">
+                        <label className="label label-text p-0" >Minimum Price</label>
+                        <p className="font-semibold">{minimumPrice}</p>
+                    </div>
+
+                    <div className="form-control">
+                        <label className="label label-text p-0" >Maximum Price</label>
+                        <p className="font-semibold">{maximumPrice}</p>
+                    </div>
+                    <div>
+                        <label className="label label-text p-0" >Job Category</label>
+                        <p className="font-semibold">{category}</p>
+                    </div>
+                    <div>
+                        <label className="label label-text p-0" >Description</label>
+                        <p className="font-semibold">{description}</p>
+                    </div>
+                </div>
+
+                <div className="divider"></div>
+
                 <div className="grid grid-cols-2 gap-5">
                     <div className="form-control">
+                        <label className=" label label-text" >Price</label>
+                        <input type="text" placeholder="price" name="price" className="input input-bordered rounded-md input-sm w-56" />
+                    </div>
+                    <div className="form-control">
+                        <label className=" label label-text" >Deadline</label>
+                        <input type="date" name="deadline" className="input input-bordered rounded-md input-sm w-56" />
+                    </div>
+                    <div className="form-control">
+                        <label className=" label label-text" >Who is biding?</label>
                         <input type="name" name="name" defaultValue={user?.email} className="input input-bordered rounded-md input-sm w-56" readOnly />
                     </div>
-
-                    <div className="form-control">
-                        <input type="text" name="jobTitle" defaultValue={jobTitle} className="input input-bordered rounded-md input-sm w-56" readOnly />
-                    </div>
-
-                    <div className="form-control">
-                        <input type="text" defaultValue={deadline} name="deadline" className="input input-bordered rounded-md input-sm w-56" readOnly />
-                    </div>
-
-                    <div className="form-control">
-                        <input type="text" defaultValue={category} name="deadline" className="input input-bordered rounded-md input-sm w-56" readOnly />
-                    </div>
-
-                    {/* <div className="form-control">
-                        <select
-                            name="category"
-                            defaultValue={category}
-                            className="select select-bordered w-56 select-sm"
-                            required
-                        >
-                            <option value="" disabled>Select a category</option>
-                            <option value="webDevelopment">Web Development</option>
-                            <option value="graphicsDesign">Graphics Design</option>
-                            <option value="digitalMarketing">Digital Marketing</option>
-                        </select>
-                    </div> */}
-
-                    <div className="form-control">
-                        <input type="text" defaultValue={minimumPrice} name="minimumPrice" className="input input-bordered rounded-md input-sm w-56" readOnly />
-                    </div>
-
-                    <div className="form-control">
-                        <input type="text" defaultValue={maximumPrice} name="maximumPrice" className="input input-bordered rounded-md input-sm w-56" readOnly />
-                    </div>
-
-                    <textarea
-                        placeholder="Description"
-                        name="description"
-                        className="textarea w-full textarea-bordered rounded-md"
-                        readOnly
-                        defaultValue={description}
-                    ></textarea>
                 </div>
 
                 <div onClick={() => handleBid(_id)} className="form-control mt-6">
