@@ -86,7 +86,7 @@ const BidRequest = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({ status: 'rejected' })
+            body: JSON.stringify({ status: 'reject' })
         })
             .then(res => res.json())
             .then(data => {

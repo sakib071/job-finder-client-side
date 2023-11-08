@@ -14,14 +14,32 @@ const BidReqRow = ({ bids, handleDelete, handleBidConfirm, handleBidReject }) =>
             <td>{deadline}</td>
             <th>
                 {
-                    status === 'confirm' ?
-                        <span className='uppercase  text-green-600'>Accepted</span> :
-                        status === 'reject' ? <span className='uppercase  text-red-600'>Rejected</span> :
-                            <div className='space-x-1'>
-                                <button onClick={() => handleBidConfirm(_id)} className="btn bg-blue-500 text-white btn-sm hover:bg-blue-600 ">Accept</button>
-                                <button onClick={() => handleBidReject(_id)} className="btn bg-red-500 text-white btn-sm hover:bg-red-600 ">Reject</button>
-                            </div>
+                    status === 'confirm' ? (
+                        <span className='uppercase text-green-600'>Accepted</span>
+                    ) : status === 'reject' ? (
+                        <span className='uppercase text-red-600'>Rejected</span>
+                    ) : (
+                        <div className='space-x-1'>
+                            <button
+                                onClick={() => {
+                                    handleBidConfirm(_id); // This should update the status to 'Accepted'
+                                }}
+                                className="btn bg-blue-500 text-white btn-sm hover:bg-blue-600"
+                            >
+                                Accept
+                            </button>
+                            <button
+                                onClick={() => {
+                                    handleBidReject(_id); // This should update the status to 'Rejected'
+                                }}
+                                className="btn bg-red-500 text-white btn-sm hover-bg-red-600"
+                            >
+                                Reject
+                            </button>
+                        </div>
+                    )
                 }
+
                 {/* {
                     status === 'confirm' ? <span className='uppercase  text-green-600'>Rejected</span> : <button to={`/updateJob/${_id}`} onClick={() => handleBidConfirm(_id)} className="btn bg-blue-500 text-white btn-sm hover:bg-blue-600 ">Reject</button>
                 } */}
