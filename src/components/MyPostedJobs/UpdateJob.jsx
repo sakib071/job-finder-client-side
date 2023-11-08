@@ -6,7 +6,6 @@ import Swal from 'sweetalert2'
 const UpdateJob = () => {
 
     const { user } = useContext(AuthContext);
-    // const location = useLocation();
     const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState([]);
     const [jobData, setJobData] = useState({});
@@ -15,7 +14,6 @@ const UpdateJob = () => {
     const data = useLoaderData();
     const { _id, jobTitle, deadline, description, category, maximumPrice, minimumPrice } = data;
 
-    // const id = location?.state?._id;
     console.log(jobTitle);
 
     useEffect(() => {
