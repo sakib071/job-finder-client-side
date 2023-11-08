@@ -15,7 +15,7 @@ import ErrorPage from './components/Shared/ErrorPage/ErrorPage';
 import BrowseByCategory from './components/BrowseByCategory/BrowseByCategory';
 import MyPostedJobs from './components/MyPostedJobs/MyPostedJobs';
 import UpdateJob from './components/MyPostedJobs/UpdateJob';
-import MyBids from './components/Home/Bids/MyBids';
+import MyBids from './components/Bids/MyBids';
 import BidRequest from './components/BidRequest/BidRequest';
 
 const router = createBrowserRouter([
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
       {
         path: "/updateJob/:id",
         element: <UpdateJob></UpdateJob>,
-        loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/updateJob/${params.id}`)
       },
       {
         path: "/myBids",

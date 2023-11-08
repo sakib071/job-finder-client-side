@@ -1,12 +1,12 @@
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../providers/AuthProviders";
-import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 const UpdateJob = () => {
 
     const { user } = useContext(AuthContext);
-    const location = useLocation();
+    // const location = useLocation();
     const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState([]);
     const [jobData, setJobData] = useState({});
@@ -15,26 +15,23 @@ const UpdateJob = () => {
     const data = useLoaderData();
     const { _id, jobTitle, deadline, description, category, maximumPrice, minimumPrice } = data;
 
-    console.log(data);
-
-    const id = location?.state?._id;
+    // const id = location?.state?._id;
     console.log(jobTitle);
 
     useEffect(() => {
-        // Fetch job data based on the jobId when the component mounts.
-        fetch(`http://localhost:5000/jobs/${id}`)
+        fetch(`http://localhost:5000/jobs/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setJobData(data);
                 setSelectedCategory(data.category);
             })
-    }, [id]);
+    }, [_id]);
 
     const handleCategoryChange = (event) => {
         setSelectedCategory(event.target.value);
     }
 
-    const handleUpdateJob = (event) => {
+    const handleUpdateJob = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -56,7 +53,7 @@ const UpdateJob = () => {
         console.log(updatedJob);
 
         fetch(`http://localhost:5000/jobs/${_id}`, {
-            method: 'PATCH',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
