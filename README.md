@@ -1,4 +1,4 @@
-[Link Text]([https://survey-master-fe443.web.app/](https://job-finder-app-83469.web.app/))
+[Live link](https://survey-master-fe443.web.app/](https://job-finder-app-83469.web.app/))
 
 **Features:**
 
