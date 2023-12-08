@@ -1,4 +1,4 @@
-[Live link]((https://job-finder-app-83469.web.app/))
+[Live link](https://job-finder-app-83469.web.app/)
 
 **Features:**
 
